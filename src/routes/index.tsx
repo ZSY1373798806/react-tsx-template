@@ -1,16 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import Container from "@/components/Container";
+import AuthLayout from "@/components/AuthLayout";
+
 import HomeRoutes from "@/pages/home/routes";
+import MineRoutes from "@/pages/mine/routes";
 import loginRoutes from "@/pages/login/routes";
-import Layout from "@/components/Layout";
 
-const authRoutes = [...HomeRoutes];
-
+const authRoutes = [...HomeRoutes, ...MineRoutes];
 const routes = [
 	...loginRoutes,
 	{
 		path: "/",
-		element: <Layout />,
+		element: (
+			<AuthLayout>
+				<Container />
+			</AuthLayout>
+		),
 		children: [...authRoutes],
 		errorElement: <ErrorBoundary />,
 	},

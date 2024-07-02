@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router";
 import styles from "./login.module.less";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || "/";
+
 	const handleLogin = () => {
-		navigate("/");
+		localStorage.setItem("auth", "true");
+		navigate(from, { replace: true });
 	};
 	return (
 		<div className={styles.login}>

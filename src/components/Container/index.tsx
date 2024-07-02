@@ -13,11 +13,12 @@ interface IProps {}
  * @param props
  * @constructor
  */
-const Layout = (props: IProps) => {
+const Container = (props: IProps) => {
 	const location = useLocation();
+	console.log("location", location, location.key);
 	return (
 		<div>
-			<AnimatePresence mode="wait">
+			<AnimatePresence mode="sync">
 				<div className={styles.header}>header</div>
 				<div className={styles.body}>
 					<motion.div
@@ -48,4 +49,4 @@ const Layout = (props: IProps) => {
 	);
 };
 
-export default Layout;
+export default Container;

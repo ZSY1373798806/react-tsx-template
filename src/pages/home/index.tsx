@@ -3,13 +3,18 @@ import styles from "./home.module.less";
 
 const Home = () => {
 	const navigate = useNavigate();
-	const handleLogin = () => {
+	const handleClick = () => {
+		navigate("/mine");
+	};
+	const handleLogout = () => {
+		localStorage.clear();
 		navigate("/login");
 	};
 	return (
 		<div className={styles.home}>
 			<h1>Home</h1>
-			<button onClick={handleLogin}>Login</button>
+			<button onClick={handleClick}>Mine</button>
+			<button onClick={handleLogout}>Logout</button>
 		</div>
 	);
 };
