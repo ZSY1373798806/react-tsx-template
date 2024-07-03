@@ -34,7 +34,7 @@
     "changelog": "turbo run changelog",
     "prepare": "husky install",
     "precommit": "lint-staged --no-stash",
-    "lint": "eslint src/**",
+    "lint": "eslint src/**/*.{ts,tsx,js,jsx} --fix",
     "fix": "prettier src/**  --write",
     "stylelint": "stylelint src/**/*.{css,less} --cache --fix"
   },
