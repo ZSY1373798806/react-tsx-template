@@ -6,7 +6,7 @@ function error(message: string) {
 	// 	content: message,
 	// 	maskClickable: false,
 	// });
-	alert(message);
+	console.log(message);
 }
 const createFetch = initFetch({
 	baseURL: process.env.REACT_APP_FETCH_BASE_URL,

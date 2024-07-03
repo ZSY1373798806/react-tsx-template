@@ -38,6 +38,6 @@ export const fetchUserInfo = createAsyncThunk(
 
 export const { setToken } = commonSlice.actions;
 
-export const userInfo = (state: RootState) => state.common.userInfo;
+export const userInfoData = (state: RootState) => state.common.userInfo;
 
 export default commonSlice.reducer;

@@ -36,7 +36,7 @@ export const puDemo = (params: GetDemoResponsesProps) =>
 
 export const getUserInfo = () =>
 	fetch({
-		url: "/api/xxx",
+		url: "/api/xxx/userInfo",
 		method: "get",
 		params: {},
 	});

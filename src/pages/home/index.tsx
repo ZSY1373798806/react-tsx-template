@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import styles from "./home.module.less";
+import { useEffect } from "react";
 
 const Home = () => {
 	const navigate = useNavigate();
@@ -10,6 +11,11 @@ const Home = () => {
 		localStorage.clear();
 		navigate("/login");
 	};
+
+	useEffect(() => {
+		console.log("home");
+	}, []);
+
 	return (
 		<div className={styles.home}>
 			<h1>Home</h1>
