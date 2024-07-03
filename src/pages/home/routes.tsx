@@ -2,7 +2,7 @@ import Loadable from "@/components/Loadable";
 import React from "react";
 
 const Home = React.lazy(
-	(/* webpackChunkName: 'home-bundler' */) => import("@/pages/home")
+	() => import(/* webpackChunkName: "home-bundler" */ "@/pages/home")
 );
 const routes = [
 	{

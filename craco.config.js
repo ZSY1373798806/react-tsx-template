@@ -4,6 +4,8 @@ const CracoLessPlugin = require("craco-less");
 const dotenv = require("dotenv");
 const pkg = require("./package.json");
 const { BannerPlugin } = require("webpack");
+const TerserPlugin = require("terser-webpack-plugin");
+
 /* 移动端配置 */
 // const pxtoViewPort = require("postcss-px-to-viewport");
 
@@ -62,6 +64,14 @@ module.exports = {
 				new BannerPlugin({
 					banner: new Date().toString(),
 					entryOnly: true,
+				}),
+				new TerserPlugin({
+					parallel: true, // 启用多进程并行压缩
+					terserOptions: {
+						compress: {
+							drop_console: !isDev,
+						},
+					},
 				}),
 			],
 		},

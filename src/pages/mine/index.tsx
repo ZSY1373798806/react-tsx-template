@@ -6,10 +6,15 @@ const Mine = () => {
 	const handleClick = () => {
 		navigate("/");
 	};
+	const handleLogout = () => {
+		localStorage.clear();
+		navigate("/login");
+	};
 	return (
 		<div className={styles.mine}>
 			<h1>Mine</h1>
 			<button onClick={handleClick}>Home</button>
+			<button onClick={handleLogout}>Logout</button>
 		</div>
 	);
 };

@@ -1,7 +1,7 @@
-import React from "react";
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./index.module.less";
+import { useEffect } from "react";
 
 const transition = { duration: 0.25, ease: "easeInOut" };
 
@@ -15,12 +15,15 @@ interface IProps {}
  */
 const Container = (props: IProps) => {
 	const location = useLocation();
-	console.log("location", location, location.key);
+
+	useEffect(() => {
+		console.log("location", location, location.key);
+	}, [location]);
 	return (
 		<div>
-			<AnimatePresence mode="sync">
-				<div className={styles.header}>header</div>
-				<div className={styles.body}>
+			<div className={styles.header}>header</div>
+			<div className={styles.body}>
+				<AnimatePresence mode="sync">
 					<motion.div
 						key={location.key}
 						initial="initial"
@@ -42,8 +45,8 @@ const Container = (props: IProps) => {
 					>
 						<Outlet />
 					</motion.div>
-				</div>
-			</AnimatePresence>
+				</AnimatePresence>
+			</div>
 			<ScrollRestoration />
 		</div>
 	);

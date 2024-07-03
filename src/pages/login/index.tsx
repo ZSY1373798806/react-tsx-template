@@ -9,6 +9,7 @@ const Login = () => {
 
 	const handleLogin = () => {
 		localStorage.setItem("auth", "true");
+		console.log("from", from);
 		navigate(from, { replace: true });
 	};
 	return (

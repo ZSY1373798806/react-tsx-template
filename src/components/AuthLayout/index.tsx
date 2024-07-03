@@ -1,14 +1,10 @@
-import { JSX } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import Container from "../Container";
 
-interface IProps {
-	children: JSX.Element;
-}
+interface IProps {}
 
 const AuthLayout = (props: IProps) => {
-	const { children } = props;
 	const location = useLocation();
-	// const location = window.Location;
 
 	const auth = localStorage.getItem("auth");
 	if (!auth) {
@@ -16,7 +12,7 @@ const AuthLayout = (props: IProps) => {
 		return <Navigate to="/login" state={{ from: location }} replace />;
 	}
 
-	return children;
+	return <Container />;
 };
 
 export default AuthLayout;

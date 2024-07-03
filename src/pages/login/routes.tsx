@@ -2,7 +2,7 @@ import Loadable from "@/components/Loadable";
 import React from "react";
 
 const Login = React.lazy(
-	(/* webpackChunkName: 'login-bundler' */) => import("@/pages/login")
+	() => import(/* webpackChunkName: "login-bundler" */ "@/pages/login")
 );
 const routes = [
 	{

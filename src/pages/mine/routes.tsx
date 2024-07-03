@@ -2,7 +2,7 @@ import Loadable from "@/components/Loadable";
 import React from "react";
 
 const Mine = React.lazy(
-	(/* webpackChunkName: 'Mine-bundler' */) => import("@/pages/mine")
+	() => import(/* webpackChunkName: "mine-bundler" */ "@/pages/mine")
 );
 const routes = [
 	{
