@@ -2,9 +2,9 @@ import { RouteObject, createBrowserRouter } from "react-router-dom";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import AuthLayout from "@/components/AuthLayout";
 
-import HomeRoutes from "@/pages/home/routes";
-import MineRoutes from "@/pages/mine/routes";
-import loginRoutes from "@/pages/login/routes";
+import HomeRoutes from "@/routes/modules/home.routes";
+import MineRoutes from "@/routes/modules/mine.routes";
+import loginRoutes from "@/routes/modules/login.routes";
 
 /* 需要校验登录 */
 const authRoutes: RouteObject[] = [

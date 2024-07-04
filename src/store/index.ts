@@ -2,14 +2,16 @@
  * redux的入口配置的store文件
  */
 import { configureStore } from "@reduxjs/toolkit";
-import commonReducer from "./commonSlice";
-import homeReducer from "@/pages/home/homeSlice";
-import loginReducer from "@/pages/login/loginSlice";
+import commonReducer from "@/store/slices/commonSlice";
+import homeReducer from "@/store/slices/homeSlice";
+import mineReducer from "@/store/slices/mineSlice";
+import loginReducer from "@/store/slices/loginSlice";
 
 const store = configureStore({
 	reducer: {
 		common: commonReducer,
 		home: homeReducer,
+		mine: mineReducer,
 		login: loginReducer,
 	},
 });

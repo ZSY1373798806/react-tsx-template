@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import styles from "./mine.module.less";
-import { useAppDispatch, useAppSelector } from "@/use/useStore";
+import { useAppDispatch, useAppSelector } from "@/hooks/useStore";
 import { useEffect } from "react";
-import { fetchUserInfo, userInfoData } from "@/store/commonSlice";
+import { fetchUserInfo, userInfoData } from "@/store/slices/commonSlice";
 
 const Mine = () => {
 	const navigate = useNavigate();
